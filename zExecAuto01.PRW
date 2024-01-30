@@ -101,3 +101,5 @@ User Function zTeste()//zExecAuto01()
     
     RestArea(_aArea)
 Return
+
+//Teste de alteração.
