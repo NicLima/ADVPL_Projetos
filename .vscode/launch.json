@@ -7,9 +7,54 @@
 			"name": "Depuração do idioma TOTVS",
 			"program": "${command:AskForProgramName}",
 			"cwb": "${workspaceFolder}",
-			"smartclientBin": "C:\\_NICOLAS\\Atalhos TOTVS\\Protheus_DES\\smartclient.exe",
+			"smartclientBin": "C:\\_NICOLAS\\Atalhos TOTVS\\Protheus_TST\\smartclient.exe",
 			"isMultiSession": true,
-			"enableTableSync": true
+			"enableTableSync": true,
+			"enableMultiThread": true,
+			"programArguments": [],
+			"enableProfile": false,
+			"isAccessibilityMode": false,
+			"doNotShowSplash": false,
+			"openglMode": false,
+			"dpiMode": false,
+			"olddpiMode": false,
+			"language": "1",
+			"ignoreFiles": false
 		}
-	]
+	],
+	"lastPrograms": [
+		{
+			"args": [],
+			"label": "U_ZEICR003"
+		},
+		{
+			"label": "SIGAEIC"
+		},
+		{
+			"label": "SIGACOM"
+		},
+		{
+			"label": "SIGAEST"
+		},
+		{
+			"label": "SIGAPEC"
+		},
+		{
+			"label": "sigafat"
+		},
+		{
+			"label": "SIGAMDI"
+		},
+		{
+			"label": "SIGAVEI"
+		},
+		{
+			"args": [],
+			"label": "U_ZFATF024"
+		},
+		{
+			"label": "SIGACFG"
+		}
+	],
+	"lastProgramExecuted": "SIGAMDI"
 }
