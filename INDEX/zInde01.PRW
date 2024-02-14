@@ -6,10 +6,6 @@
 //Defines
 #Define CRLF chr(13) + chr(10)
 
-//Variáveis estáticas
-//Static cTitulo := "Chamados"
-//Static cAliasMVC := "ZK0"
-
 /*
 =====================================================================================
 Programa.:              ZINDE01
@@ -24,16 +20,14 @@ Obs......:              https://terminaldeinformacao.com/2015/10/05/criando-tabe
 */
 
 User Function zINDE01()
-    Local aArea     := GetArea()
-    Local aAreaX2   := SX2->(GetArea()) //SX2 - Tabela de manutenção dos arquivos
-    Local aAreaIX   := SIX->(GetArea()) //SIX - Tabela de indíce dos arquivos
-    Local cAliasTab := "ZK0"            //ZK0 - Tabela customizada criada para este estudo
-    Local aSIX      := {}
+    Local aArea         := GetArea()
+    Local aAreaX2       := SX2->(GetArea()) //SX2 - Tabela de manutenção dos arquivos
+    Local aAreaIX       := SIX->(GetArea()) //SIX - Tabela de indíce dos arquivos
+    Local cAliasTab     := "ZK0"            //ZK0 - Tabela customizada criada para este estudo
+    Local aSIX          := {}
     Local lTemAltera    := .F.
     Local cMsgAux       := ""
     Local nAtual        := 0
-    //Local cOrdemAux     := ""
-    //Local lTabCriada    := .F.
 
     Begin Sequence
         //Setando os indíces
@@ -86,7 +80,7 @@ User Function zINDE01()
                 
                 //Se houve Erro na Rotina
                 If __GetX31Error()
-                    cMsgAux := "Houveram erros na atualização da tabela "+cTabAux+":"+Chr(13)+Chr(10)
+                    cMsgAux := "Houveram erros na atualização da tabela " + cAliasTab + ":" + CRLF
                     cMsgAux += __GetX31Trace()
                     Aviso('Atenção', cMsgAux, {'OK'}, 03)
                 EndIf                                                         
@@ -101,11 +95,8 @@ User Function zINDE01()
     End Sequence    
      
     RestArea(aAreaIX)
-    //RestArea(aAreaX3)
     RestArea(aAreaX2)
     RestArea(aArea) 
-
-    RestArea(aArea)
 
 Return Nil
 
