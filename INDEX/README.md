@@ -1,17 +1,18 @@
 # ADVPL_Projetos
 
 2. T-Report
-   2.1. RelatÛrio com NF de entrada e saÌda com chave gerada.
-      * **zTRep01.prw**: Tela com opÁ„o para relatÛrios NF saÌda / NF entrada. 
 
-      
+   2.1. Relat√≥rio com NF de entrada e sa√≠da com chave gerada.
+      * **zTRep01.prw**: Tela com op√ß√£o para relat√≥rios NF sa√≠da / NF entrada.
+   .    
+       ![image](https://github.com/NicLima/ADVPL_Projetos/assets/77217604/ddfd8e9b-f4da-4c95-bee1-2b7d5cb7a446)
+   .     
       * **zTRep02.prw**: T-Report Notas Fiscais de entrada com chave gerada. 
-      * **zTRep03.prw**: T-Report Notas Fiscais de saÌda com chave gerada.
+      * **zTRep03.prw**: T-Report Notas Fiscais de sa√≠da com chave gerada.
 
-   Obs.: Os fontes desta pasta podem ser baixados e compilados, porÈm precisam de uma adequaÁ„o para o ambiente desejado.
-   Pontos a serem observados: 
-      - Campos.
-      - Tabelas.
-      - Consultas Padr„o.
+        Obs. 1: Os fontes desta pasta podem ser baixados e compilados, por√©m precisam de uma adequa√ß√£o para o ambiente desejado.
 
-   … necess·rio adicionar o fonte zTrep01 ao menu do ambiente desejado.
+        Obs. 2: Observar no ambiente: Campos, Tabelas e Consulta padr√£o.
+
+        Obs. 3: √â necess√°rio adicionar o fonte zTrep01 ao menu do ambiente desejado.
+      
