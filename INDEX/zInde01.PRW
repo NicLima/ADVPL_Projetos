@@ -5,12 +5,6 @@
 
 //Defines
 #Define CRLF chr(13) + chr(10)
-//Constantes usadas na criação dos campos
-#Define _X3_USADO         "€€€€€€€€€€€€€€ "
-#Define _X3_USFILIAL     "€€€€€€€€€€€€€€€"
-#Define _X3_RESERV         "þA"
-#Define _X3_OBRIGA         "€"
-#Define _X3_NAO_OBRIGA     ""
 
 //Variáveis estáticas
 //Static cTitulo := "Chamados"
@@ -18,57 +12,33 @@
 
 /*
 =====================================================================================
-Programa.:              ZMOD02
+Programa.:              ZINDE01
 Autor....:              Nicolas C Lima Santos 
 Data.....:              08/02/24
-Descricao / Objetivo:   
+Descricao / Objetivo:   Criar um indíce para um tabela customizada "a quente", sem utilizar o configurador. 
 Doc. Origem:            
 Solicitante:            
 Uso......:              
 Obs......:              https://terminaldeinformacao.com/2015/10/05/criando-tabelas-campos-e-indices-a-quente-no-protheus/          
 =====================================================================================
 */
-/*/
-SIX: -> SIX - Índices dos Arquivos (SX2).
-        [nLinha][01] - Índice
-        [nLinha][02] - Ordem
-        [nLinha][03] - Chave
-        [nLinha][04] - Descrição
-        [nLinha][05] - Propriedade
-        [nLinha][06] - NickName
-        [nLinha][07] - Mostr.Pesq
-/*/
 
-User Function zMOD02()
-    Local aArea := GetArea()
-    Local aAreaX2 := SX2->(GetArea())
-    Local aAreaIX := SIX->(GetArea())
-    Local cAliasTab := "ZK0"
-    Local aSIX := {}
-
-    Local lTabCriada    := .F.
+User Function zINDE01()
+    Local aArea     := GetArea()
+    Local aAreaX2   := SX2->(GetArea()) //SX2 - Tabela de manutenção dos arquivos
+    Local aAreaIX   := SIX->(GetArea()) //SIX - Tabela de indíce dos arquivos
+    Local cAliasTab := "ZK0"            //ZK0 - Tabela customizada criada para este estudo
+    Local aSIX      := {}
     Local lTemAltera    := .F.
-
     Local cMsgAux       := ""
     Local nAtual        := 0
-    Local cOrdemAux     := ""
+    //Local cOrdemAux     := ""
+    //Local lTabCriada    := .F.
 
     Begin Sequence
-    
         //Setando os indíces
         SX2->(dbSetORder(2)) //X2_CHAVE
         SIX->(dbSetOrder(1)) //INDICE+ORDEM
-
-        //Selectionar tabela
-        //DbSelectArea(cAliasTab)
-        //DbGoTop()
-
-        //If cAliasTab > 0 
-        //    MsgInfo("Tabela encontrada", "Atenção")
-        //Else
-        //    MsgInfo("Tabela NÃO encontrada", "Atenção")
-        //    Break
-        //EndIf
 
         AADD(aSIX, {"ZK0", "1", "ZK0_FILIAL+ZK0_GAPNUM", "Numero GAP", "S", "GAPNUM", "S"})
         /*/
@@ -81,7 +51,6 @@ User Function zMOD02()
             [nLinha][06] - NickName
             [nLinha][07] - Mostr.Pesq
         /*/
-
         //Percorrendo os índices
             For nAtual := 1 To Len(aSIX)
                 //Se não conseguir posicionar, quer dizer que não existe o índice, logo será criado
