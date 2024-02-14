@@ -1,16 +1,20 @@
 # ADVPL_Projetos
 
-Repositório criado para manter projetos com a linguagem ADVPL usada no ERP TOTVs Protheus.
+RepositÃ³rio criado para manter projetos com a linguagem ADVPL usada no ERP TOTVs Protheus.
 
-Os projetos aqui desenvolvidos foram todos criados para uso prático, antes de serem disponibilizados eles passam por ajustes para não expor informações sensí­veis.
+Os projetos aqui desenvolvidos foram todos criados para uso prÃ¡tico, antes de serem disponibilizados eles passam por ajustes para nÃ£o expor informaÃ§Ãµes sensÃ­Â­veis.
 
 Mapa de projetos:
 
 1. ExecAuto
-   * **zExecAuto01.prw**: ExecAuto MATA261 Transferência múltipla. 
+   * **zExecAuto01.prw**: ExecAuto MATA261 TransferÃªncia mÃºltipla. 
 
-2. T-Report
-   2.1. Relatório com NF de entrada e saída com chave gerada.
-      * **zTRep01.prw**: Tela com opção para relatórios NF saída / NF entrada. 
+2. Index
+   * **zInde01.prw**: Criar um indÃ­ce para um tabela customizada "a quente", sem utilizar o configurador.
+      
+3. T-Report
+
+   3.1. RelatÃ³rio com NF de entrada e saÃ­da com chave gerada.
+      * **zTRep01.prw**: Tela com opÃ§Ã£o para relatÃ³rios NF saÃ­da / NF entrada. 
       * **zTRep02.prw**: T-Report Notas Fiscais de entrada com chave gerada. 
-      * **zTRep03.prw**: T-Report Notas Fiscais de saída com chave gerada.
+      * **zTRep03.prw**: T-Report Notas Fiscais de saÃ­da com chave gerada.
