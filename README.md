@@ -13,6 +13,7 @@ Mapa de projetos:
    * **zInde01.prw**: Criar um indíce para um tabela customizada "a quente", sem utilizar o configurador.
       
 3. T-Report
+
    3.1. Relatório com NF de entrada e saída com chave gerada.
       * **zTRep01.prw**: Tela com opção para relatórios NF saída / NF entrada. 
       * **zTRep02.prw**: T-Report Notas Fiscais de entrada com chave gerada. 
