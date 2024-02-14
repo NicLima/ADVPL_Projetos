@@ -1,4 +1,5 @@
 # ADVPL_Projetos
+Versão Protheus: 12.1.2210
 
 2. T-Report
 

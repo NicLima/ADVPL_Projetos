@@ -8,15 +8,19 @@
 
 #define CRLF chr(13) + chr(10)
 
-/*/{Protheus.doc} zExecAuto01
-Responsável pelas funções customizadas com utilizades em outros programas
-@author Nicolas Lima
-@since 19/01/2024
-@version 1.0
-@return ${return}, ${return_description}
-@type user function
-@history    
-/*/
+/*
+=====================================================================================
+Programa.:              zExecAuto01
+Autor....:              Nicolas C Lima Santos 
+Data.....:              19/01/24
+Descricao / Objetivo:   Criar um execauto para a função MATA261 - tranferência múltipla. 
+Doc. Origem:            
+Solicitante:            
+Uso......:              
+Obs......:               
+=====================================================================================
+*/
+
 User Function zTeste()//zExecAuto01()
     
     Local _aArea        := GetArea()
