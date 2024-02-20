@@ -2,7 +2,7 @@
 
 Repositório criado para manter projetos com a linguagem ADVPL usada no ERP TOTVs Protheus.
 
-Os projetos aqui desenvolvidos foram todos criados para uso prático, antes de serem disponibilizados eles passam por ajustes para não expor informações sensí­veis.
+Os projetos aqui desenvolvidos foram todos criados para uso prático, antes de serem disponibilizados eles passam por ajustes para não expor informações sensí­veis, porém todos podem são compilados e testados.
 
 Mapa de projetos:
 
