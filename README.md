@@ -22,8 +22,11 @@ Mapa de projetos:
 4. API TOTVS USERS
    * **zAPI01.prw**: Integração com API Rest Users padrão do Protheus para consultar dados de determinado usuário e posterirmente realizar o bloqueio deste usuário.
 
-5. TELA MVC MODELO 3 A PARTIR DE PONTO DE ENTRADA
+5. CONSULTA ESPECIFICA
+   * **zCOES01.prw**: Função responsável por consulta "padrão" do tipo específica para os códigos de compradores.
+
+6. TELA MVC MODELO 3 A PARTIR DE PONTO DE ENTRADA
    * **zMOD301.prw**: Tela de alteração do peso cubado e peso bruto.
    * **GFEA042_PE.prw**: Ponto de entrada para inclusão de nova opção no menu na rotina de documento de carga.
   
-  
+
