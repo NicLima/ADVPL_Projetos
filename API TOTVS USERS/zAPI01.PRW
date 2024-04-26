@@ -4,24 +4,27 @@
 
 /*
 =====================================================================================
-Programa.:              ZWSR017.PRW
-Autor....:              CAOA - Nicolas C Lima Santos 
+Programa.:              zAPI01.PRW
+Autor....:              Nicolas C Lima Santos 
 Data.....:              26/04/24
 Descricao / Objetivo:   Integração com API Rest Users padrão do Protheus para consultar dados de determinado
                         usuário e posterirmente realizar o bloqueio deste usuário.
-Doc. Origem:            GAP153
-Solicitante:            Evandro Mariano
-Uso......:              JOB que valida usuário inativo nos último xx dias.
+Doc. Origem:            
+Solicitante:            
+Uso......:              
 Obs......:              https://github.com/jerfweb/API-REST-PROTHEUS/blob/master/API%20PADRAO/API%20USER/fAlterarUsuario.prw
 Obs......:              https://api.totvs.com.br/
 Obs......:              https://api.totvs.com.br/apidetails/User_v1_000.json
+Obs......:              O método DELETE desta API é o ideal para bloquear os usuários, porém
+                        ele também limpa os acessos e grupos, por isso não foi utilizado.          
 =====================================================================================
 */
-User Function  ZWSR017()
+User Function  ZAPI01()
 
     Local oRestClient   := Nil
-    Local cUrl		    := "/rest_caoasp01/users/" 
+    Local cUrl		    := "/'rest_endereco'/users/"  //Deve-ser atualizar com o endereço do REST 
     Local aHeadStr		:= {"Content-Type: application/json"}
+    Local cEndPt      := "http://172.28.35.142:34286" //IP + PORTA do serviço do protheus
     Local oObjJson		:= Nil
     Local cStrResul		:= ""
     Local cCodUsr       := "001256" //Código do usuários a ser bloqueado.
@@ -37,7 +40,7 @@ User Function  ZWSR017()
       EndIf
       
       //Endereço do EndPoint REST
-      oRestClient := FWRest():New(AllTrim("http://172.28.35.142:34286"))
+      oRestClient := FWRest():New(AllTrim(cEndPt)) 
 
       // chamada de classe REST com retorno de dados do usuário - Verbo GET
       oRestClient:setPath(cUrl+cCodUsr)
@@ -73,8 +76,8 @@ User Function  ZWSR017()
             Break
           EndIf
 
-          If Empty(AllTrim(cEmail))
-            cEmail := "@"
+          If Empty(AllTrim(cEmail)) //Passar o e-mail é obrigatório.
+            cEmail := "@" 
           EndIf
         
           //BODY - estrutura basica para update de usuário, mais informação ler documentação.
