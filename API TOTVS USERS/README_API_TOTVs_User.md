@@ -1,15 +1,15 @@
 # ADVPL_Projetos
-Vers„o Protheus: 12.1.2210
+Vers√£o Protheus: 12.1.2210
 
-Consulta EspecÌfica
-   * **zAPI01.prw**: IntegraÁ„o com API Rest Users padr„o do Protheus para consultar dados de determinado usu·rio e posterirmente realizar o bloqueio deste usu·rio. 
+API TOTVS USER
+   * **zAPI01.prw**: Integra√ß√£o com API Rest Users padr√£o do Protheus para consultar dados de determinado usu√°rio e posterirmente realizar o bloqueio deste usu√°rio. 
 
-**ObervaÁıes sobre o fonte:**
+**Oberva√ß√µes sobre o fonte:**
 
-1. O mÈtodo GET serve para consultar os dados do usu·rio, uma vez que o Nome e o e-mail s„o obrigatÛrios na passagem do body no mÈtodo PUT.
+1. O m√©todo GET serve para consultar os dados do usu√°rio, uma vez que o Nome e o e-mail s√£o obrigat√≥rios na passagem do body no m√©todo PUT.
 
-2. O mÈtodo PUT serve para alterar o usu·rio, o Nome e o e-mail s„o obrigatÛrio, caso o usu·rio j· tenha e-mail cadastrado, esse ser· mantido, caso n„o tenha ser· passado '@', porÈm na pr·tica o campo de e-mail fica em branco.
+2. O m√©todo PUT serve para alterar o usu√°rio, o Nome e o e-mail s√£o obrigat√≥rio, caso o usu√°rio j√° tenha e-mail cadastrado, esse ser√° mantido, caso n√£o tenha ser√° passado '@', por√©m na pr√°tica o campo de e-mail fica em branco.
 
-   2.1 o par‚metro que indica que o usu·rio deve ser bloqueado È ' "active":false' '
+   2.1 o par√¢metro que indica que o usu√°rio deve ser bloqueado √© ' "active":false' '
 
-3. As informaÁıes de 'cUrl', 'cEndPt' e 'cCodUsr' devem ser atualizados conforme as informaÁıes desejadas.
+3. As informa√ß√µes de 'cUrl', 'cEndPt' e 'cCodUsr' devem ser atualizados conforme as informa√ß√µes desejadas.
