@@ -1,23 +1,28 @@
 # ADVPL_Projetos
-Vers„o Protheus: 12.1.2210
+Vers√£o Protheus: 12.1.2210
 
-Consulta EspecÌfica
-   * **zCoes01.prw**: FunÁ„o responasvel por consulta padr„o especÌfica dos cÛdigos de compradores. 
+Consulta Espec√≠fica
+   * **zCoes01.prw**: Fun√ß√£o responasvel por consulta padr√£o espec√≠fica dos c√≥digos de compradores. 
 
-**Cadastrar uma consulta especÌfica no configurador:**
+**Cadastrar uma consulta espec√≠fica no configurador:**
 
 1. Abrir o configurador e acessar a Base de dados:
-Configurador/Base de Dados/Dicion·rio/Bases de Dados
+Configurador/Base de Dados/Dicion√°rio/Bases de Dados
 
-2. Escolher a opÁ„o 'Consultas Padr„o' e clicar em 'Incluir'
--- Colocar aqui a 'Img 01'
+2. Escolher a op√ß√£o 'Consultas Padr√£o' e clicar em 'Incluir'
 
-3. Selecionar o tipo de consulta 'Consulta EspecÌfica', Preencher os campos necess·rio e 'AvanÁar'.
--- Colocar aqui a 'Img 02'
+![image](https://github.com/NicLima/ADVPL_Projetos/assets/77217604/49fcf2d4-438c-48af-8831-3dc261b2d305)
 
-4. Escolha a tabela principal sobre a qula deseja criar a consulta, preencha a express„o com a funÁ„o principal do fonte criado e preencha o retorno com a funÁ„o de retorno, em seguida 'Finalizar'.
--- Colocar aqui a 'Img 03'
+3. Selecionar o tipo de consulta 'Consulta Espec√≠fica', Preencher os campos necess√°rio e 'Avan√ßar'.
 
-5. A consulta especÌfica j· est· cadastrada, certifique-se que o fonte customizado foi criado e atribua ao campo desejado. 
--- Coloar aqui a 'Img 04'
+![image](https://github.com/NicLima/ADVPL_Projetos/assets/77217604/2491846a-d711-4e55-b640-4de30986f3e7)
+
+4. Escolha a tabela principal sobre a qual deseja criar a consulta, preencha a express√£o com a fun√ß√£o principal do fonte criado e preencha o retorno com a fun√ß√£o de retorno, em seguida 'Finalizar'.
+
+![image](https://github.com/NicLima/ADVPL_Projetos/assets/77217604/f715b6a7-d880-4c9c-a2be-43085f8c921f)
+
+
+5. A consulta espec√≠fica j√° est√° cadastrada, certifique-se que o fonte customizado foi criado e atribua ao campo desejado. 
+
+![image](https://github.com/NicLima/ADVPL_Projetos/assets/77217604/cb44724b-db1b-4227-8aea-193a88c850d6)
 
