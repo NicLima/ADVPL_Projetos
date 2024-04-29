@@ -3,9 +3,9 @@
 #Include "PROTHEUS.ch"
 #Include "FWMVCDEF.ch"
 
-//Variáveis estatisticas
+//VariÃ¡veis estatisticas
 Static cTitulo      := "Ajuste de Peso - Notas Fiscas"
-Static cTabPai      := "SF2" //Cabeçalho de NF.
+Static cTabPai      := "SF2" //CabeÃ§alho de NF.
 Static cTabFilho    := "GW8" //Itens do documento de carga.
 
 /*
@@ -15,7 +15,7 @@ Autor....:              CAOA - Nicolas C Lima Santos
 Data.....:              05/01/24
 Descricao / Objetivo:   Tela para alterar peso cubado e peso bruto de NF emitida.
 Doc. Origem:            GAP032
-Solicitante:            Micaellen Leal
+Solicitante:            
 Uso......:              
 Obs......:              
 =====================================================================================
@@ -38,7 +38,7 @@ Static Function MenuDef()
 
 	Local aRotina := {}
 
-	//Adicionando opções de menu
+	//Adicionando opÃ§Ãµes de menu
 
 	ADD OPTION aRotina TITLE "Alterar"      ACTION "VIEWDEF.ZGFEF008" OPERATION 4 ACCESS 0
 
@@ -51,12 +51,12 @@ Static Function ModelDef()
 	Local oStruPai 	 := FWFormStruct(1, cTabPai)
 	Local oStruFilho := FWFormStruct(1, cTabFilho)
 	Local aRelation  := {}
-	Local bPre       := Nil //Antes de abrir o formulário.
+	Local bPre       := Nil //Antes de abrir o formulÃ¡rio.
 	Local bPos       := {|| u_fCommit() } //Ao clicar no confirmar, antes de salvar.
-	Local bCommit    := Nil //Após fechar o formulário quando for salvar.
-	Local bCancel    := Nil //Quando o usuário cancelar o formulário
+	Local bCommit    := Nil //ApÃ³s fechar o formulÃ¡rio quando for salvar.
+	Local bCancel    := Nil //Quando o usuÃ¡rio cancelar o formulÃ¡rio
 	
-	//Bloqueia alteração no campo (deixa cinza).
+	//Bloqueia alteraÃ§Ã£o no campo (deixa cinza).
 	oStruPai:SetProperty('F2_DOC'     , MODEL_FIELD_WHEN,{|| .F. })
 	oStruPai:SetProperty('F2_SERIE'   , MODEL_FIELD_WHEN,{|| .F. })
 	oStruPai:SetProperty('F2_CLIENTE' , MODEL_FIELD_WHEN,{|| .F. })
@@ -65,7 +65,7 @@ Static Function ModelDef()
 	oStruPai:SetProperty('F2_VALBRUT' , MODEL_FIELD_WHEN,{|| .F. })
 	oStruPai:SetProperty('F2_CHVNFE'  , MODEL_FIELD_WHEN,{|| .F. })
 
-	//Bloqueia alteração no campo (deixa cinza).
+	//Bloqueia alteraÃ§Ã£o no campo (deixa cinza).
 	oStruFilho:SetProperty('GW8_SEQ'  , MODEL_FIELD_WHEN,{|| .F. })
 	oStruFilho:SetProperty('GW8_ITEM' , MODEL_FIELD_WHEN,{|| .F. })
 	oStruFilho:SetProperty('GW8_DSITEM'  , MODEL_FIELD_WHEN,{|| .F. })
@@ -82,8 +82,8 @@ Static Function ModelDef()
 	oModel:GetModel("GW8GRID"  ):SetDescription("Grid de - "  + cTitulo)
 
 	//Fazendo o relacionamento (similar ao left join do sql)
-	aAdd(aRelation, {"GW8_FILIAL", "FWxFilial('GW8')"}) //Na esquerda é o filho e na direitra é o Pai.
-	aAdd(aRelation, {"GW8_NRDC", "F2_DOC"}) //Na esquerda é o filho e na direitra é o Pai.
+	aAdd(aRelation, {"GW8_FILIAL", "FWxFilial('GW8')"}) //Na esquerda Ã© o filho e na direitra Ã© o Pai.
+	aAdd(aRelation, {"GW8_NRDC", "F2_DOC"}) //Na esquerda Ã© o filho e na direitra Ã© o Pai.
 	oModel:SetRelation("GW8GRID", aRelation, GW8->(IndexKey(1)))
 	oModel:SetPrimaryKey({})
 
@@ -102,15 +102,15 @@ Static Function ViewDef()
 	oView:AddField("VIEW_CAB",oStruPai  ,"SF2MASTER") 
 	oView:AddGrid("VIEW_GRID",oStruFilho  ,"GW8GRID")
 
-	//Distribuição da tela
+	//DistribuiÃ§Ã£o da tela
 	oView:CreateHorizontalBox("CABEC", 60)
 	oView:CreateHorizontalBox("GRID" , 40)
 
 	oView:SetOwnerView("VIEW_CAB", "CABEC")
 	oView:SetOwnerView("VIEW_GRID", "GRID")
 
-	//Título
-	oView:EnableTitleView("VIEW_CAB","Cabeçalho da Nota Fiscal")
+	//TÃ­tulo
+	oView:EnableTitleView("VIEW_CAB","CabeÃ§alho da Nota Fiscal")
 	oView:EnableTitleView("VIEW_GRID","Itens da Nota Fiscal")
 	
 	oStruPai:RemoveField( 'F2_CLIENT' )
@@ -125,13 +125,13 @@ Static Function ViewDef()
 	oStruPai:SetProperty('F2_XPESOC' 	, MVC_VIEW_ORDEM , '08')
 	oStruPai:SetProperty('F2_PBRUTO' 	, MVC_VIEW_ORDEM , '09')
 	
-	//Definindo que não irá usar o botão "Salvar e Criar Novo"
+	//Definindo que nÃ£o irÃ¡ usar o botÃ£o "Salvar e Criar Novo"
     oView:SetCloseOnOk({|| .T.})	
 
 Return oView
 
-//PE executado ao clicar no botão confirmar. 
-//Valida as informações inseridas e chama rotina de rateiro de peso bruto e cubado. 
+//PE executado ao clicar no botÃ£o confirmar. 
+//Valida as informaÃ§Ãµes inseridas e chama rotina de rateiro de peso bruto e cubado. 
 User Function fCommit()
 	Local aArea := GetArea()
 
@@ -144,7 +144,7 @@ User Function fCommit()
 	Local nVlrTot 	 := SF2->F2_VALBRUT	//Valor Bruto Original 
 	Local nPBNovo 	 := oModelCad:GetValue('F2_PBRUTO')  //Peso Bruto Novo
 	Local nPCNovo 	 := oModelCad:GetValue('F2_XPESOC')  //Peso Cubado Novo
-	Local lRet 	  	 := .F.
+	Local lRet 	 := .F.
 	Local cMsg    	 := " "
 	Local nLin  	 := 0
 	Local aPesoCub   := {}
@@ -154,9 +154,9 @@ User Function fCommit()
 	Local cDtEmiss 	 := " "
 	Local cSerDc 	 := " "
 	Local cNrDc 	 := " "
-	Local cSeq 		 := ""
+	Local cSeq 	 := ""
 
-	cMsg += "Alterações: " + CRLF
+	cMsg += "AlteraÃ§Ãµes: " + CRLF
 	cMsg += CRLF + "Peso Cubado Total de: " + Alltrim(cValToChar(cPCOrig))  + " para: " + Alltrim(cValtoChar(nPCNovo)) + " " + CRLF
 	cMsg += "Peso Bruto Total de: " + Alltrim(cValToChar(cPBOrig))  + " para: " + Alltrim(cValToChar(nPBNovo)) + " " + CRLF 
 
@@ -167,7 +167,7 @@ User Function fCommit()
 			//Posicionando na linha
 			oModelGrid:GoLine(nLin)
 
-			//Se a linha não estiver deletada
+			//Se a linha nÃ£o estiver deletada
 			If ! oModelGrid:IsDeleted()
 				
 				cTpDoc 		:= oModelGrid:GetValue("GW8_CDTPDC")
@@ -212,10 +212,10 @@ User Function fCommit()
 				cMsg += CRLF + "Rateio de peso bruto falhou, verifique com ADM sistemas." + CRLF
 			EndIf
 		EndIf
-		FWAlertInfo(cMsg, "Informações gravadas.")
+		FWAlertInfo(cMsg, "InformaÃ§Ãµes gravadas.")
 	Else
 		lRet := .F.
-		Help("",1,"ZGFEF008",,"Dados não alterados.",1) // "Preencher o campo Loja do Prospect." 
+		Help("",1,"ZGFEF008",,"Dados nÃ£o alterados.",1) // "Preencher o campo Loja do Prospect." 
 	EndIf
 	
 	RestArea(aArea)
@@ -243,13 +243,13 @@ Static Function fRateioPC(aPesoCub, nPCNovo, nVlrTot)
 	//Verificar o total dos novos valores da Grid
 	If (nSomaPC == nPCNovo) .and. ! empty(aPCItem)
 
-		//Grava as informações na tabela GW8 (grid)
+		//Grava as informaÃ§Ãµes na tabela GW8 (grid)
 		For nLin := 1 To Len(aPesoCub)
 			nRec := aPesoCub[nLin][4]
 			DbSelectArea("GW8")
 			GW8->(DbGoTo(nRec))
 			
-			IF RecLock("GW8", .F.) // .T. ou .F. - Indica se é inclusão.
+			IF RecLock("GW8", .F.) // .T. ou .F. - Indica se Ã© inclusÃ£o.
 				GW8->GW8_PESOC := aPCItem[nLin]
 				GW8->(MsUnLock())
 				lRet := .T.
@@ -257,7 +257,7 @@ Static Function fRateioPC(aPesoCub, nPCNovo, nVlrTot)
 		Next
 		
 	Else 
-		FWAlertError("Houve um problema ao calcular o novo peso, consulta ADM sistemas.", "Atenção")
+		FWAlertError("Houve um problema ao calcular o novo peso, consulta ADM sistemas.", "AtenÃ§Ã£o")
 		lRet := .F.
 		//Break
 	EndIf	
@@ -287,13 +287,13 @@ Static Function fRateioPB(aPesoBrt, nPBNovo, nVlrTot)
 	//Verificar o total dos novos valores da Grid
 	If (nSomaPB == nPBNovo) .and. ! empty(aPBItem)
 
-		//Grava as informações na tabela GW8 (grid)
+		//Grava as informaÃ§Ãµes na tabela GW8 (grid)
 		For nLin := 1 To Len(aPesoBrt)
 			nRec := aPesoBrt[nLin][4]
 			DbSelectArea("GW8")
 			GW8->(DbGoTo(nRec))
 			
-			IF RecLock("GW8", .F.) // .T. ou .F. - Indica se é inclusão.
+			IF RecLock("GW8", .F.) // .T. ou .F. - Indica se Ã© inclusÃ£o.
 				GW8->GW8_PESOR := aPBItem[nLin]
 				GW8->(MsUnLock())
 				lRet := .T.
@@ -301,7 +301,7 @@ Static Function fRateioPB(aPesoBrt, nPBNovo, nVlrTot)
 		Next
 		
 	Else 
-		FWAlertError("Houve um problema ao calcular o novo peso, consulta ADM sistemas.", "Atenção")
+		FWAlertError("Houve um problema ao calcular o novo peso, consulta ADM sistemas.", "AtenÃ§Ã£o")
 		lRet := .F.
 		//Break
 	EndIf	
