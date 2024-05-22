@@ -3,10 +3,17 @@
 #Include 'RESTFul.ch'
 #Include 'TopConn.ch'
 
-
-/*API PARA CONSULTA DE CADASTRO DE PRODUTO
-NICOLAS LIMA
-17/05/2024
+/*
+=====================================================================================
+Programa.:              zAPI02.PRW
+Autor....:              Nicolas C Lima Santos 
+Data.....:              22/05/24
+Descricao / Objetivo:   API com método GET para consulta de produto da tabela SB1
+Doc. Origem:            
+Solicitante:            
+Uso......:              
+Obs......:              O 'tenantid' deve ser passado com 'EMPRESA,FILIAL' no header.
+=====================================================================================
 */
 WSRESTFUL zAPI02 DESCRIPTION 'WebService cadastro de protudo'
     //Atributos --Atributos vão na url
@@ -14,7 +21,7 @@ WSRESTFUL zAPI02 DESCRIPTION 'WebService cadastro de protudo'
 
     //Métodos
     WSMETHOD GET DESCRIPTION 'Retorna o registro pesquisado' WSSYNTAX '/zAPI02/get_id?{id}'
-
+    //Exemplo URL: http://localhost:8080/zAPI02/get_id?id=1310006003
 END WSRESTFUL 
 
 /*
