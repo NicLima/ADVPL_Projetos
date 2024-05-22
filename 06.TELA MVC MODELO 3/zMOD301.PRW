@@ -3,7 +3,7 @@
 #Include "PROTHEUS.ch"
 #Include "FWMVCDEF.ch"
 
-//Variáveis estatisticas
+//Variaveis estatisticas
 Static cTitulo      := "Ajuste de Peso - Notas Fiscas"
 Static cTabPai      := "SF2" //Cabeçalho de NF.
 Static cTabFilho    := "GW8" //Itens do documento de carga.

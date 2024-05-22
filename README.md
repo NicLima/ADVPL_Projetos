@@ -20,9 +20,15 @@ Mapa de projetos:
       * **zTRep03.prw**: T-Report Notas Fiscais de sai­da com chave gerada.
 
 4. API TOTVS USERS
+   3.1. Relatorio com NF de entrada e sai­da com chave gerada.
+      * **zTRep01.prw**: Tela com opcao para relatorios NF saida / NF entrada. 
+      * **zTRep02.prw**: T-Report Notas Fiscais de entrada com chave gerada. 
+      * **zTRep03.prw**: T-Report Notas Fiscais de sai­da com chave gerada.
+   
    * **zAPI01.prw**: Integracao com API Rest Users padrao do Protheus para consultar dados de determinado usuario e posterirmente realizar o bloqueio deste usuario.
 
 5. CONSULTA ESPECIFICA
+
    * **zCOES01.prw**: Funcao responsavel por consulta "padrao" do tipo especifica para os codigos de compradores.
 
 6. TELA MVC MODELO 3 A PARTIR DE PONTO DE ENTRADA
