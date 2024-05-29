@@ -36,28 +36,27 @@ User Function zTeste()//zExecAuto01()
 	Private lAutoErrNoFile  := .T.
 	Private lMsErroAuto     := .F.
 
-	//Implementado pois em alguns casos não esta conseguindo localizar numeração	
-	For _nPos := 1 To 10
-		_cDocumento  := Criavar("D3_DOC")
-		_cDocumento	:= IIf(Empty(_cDocumento),NextNumero("SD3",2,"D3_DOC",.T.),_cDocumento)
-		If !Empty(_cDocumento)
-			Exit
-		Endif 
-	Next
-
-    If Empty(_cDocumento)
-		_cMens := "Não foi possivel montar numeração SD3, para gerar movimentação." //Para implementar em alguma mensagem de erro.
-        
-        FWAlertInfo(_cMens,"Atenção.")
-
-		Disarmtransaction()
-	Else
-        _cDocumento := A261RetINV(_cDocumento)
-    EndIf
-
-    FWAlertInfo("Início do ExecAuto MATA261","Título FWAlertInfo.")
-
     Begin Transaction
+        //Implementado pois em alguns casos não esta conseguindo localizar numeração	
+        For _nPos := 1 To 10
+            _cDocumento  := Criavar("D3_DOC")
+            _cDocumento	:= IIf(Empty(_cDocumento),NextNumero("SD3",2,"D3_DOC",.T.),_cDocumento)
+            If !Empty(_cDocumento)
+                Exit
+            Endif 
+        Next
+
+        If Empty(_cDocumento)
+            _cMens := "Não foi possivel montar numeração SD3, para gerar movimentação." //Para implementar em alguma mensagem de erro.
+            
+            FWAlertInfo(_cMens,"Atenção.")
+
+            Disarmtransaction()
+        Else
+            _cDocumento := A261RetINV(_cDocumento)
+        EndIf
+
+        FWAlertInfo("Início do ExecAuto MATA261","Título FWAlertInfo.")
 
         //dDataBase é uma variável pública com a data atual.
         Aadd(_aAuto,{_cDocumento , dDataBase})    //Cabecalho
